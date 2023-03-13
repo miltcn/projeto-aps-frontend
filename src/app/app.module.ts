@@ -31,13 +31,17 @@ import { MatCardModule } from '@angular/material/card';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
+import { TechnicianListComponent } from './components/technician/technician-list/technician-list.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
     HomeComponent,
-    HeaderComponent
+    HeaderComponent,
+    TechnicianListComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
