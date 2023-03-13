@@ -1,0 +1,9 @@
+.card {
+  width: 80%;
+  margin: auto;
+  background-color: #E1DCE0;
+}
+
+.card img {
+  height: 15rem;
+}
