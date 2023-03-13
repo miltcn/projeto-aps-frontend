@@ -1,0 +1,36 @@
+.container {
+  height: 100%;
+  background: #9E9B98;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form {
+  height: 80%;
+  width: 20rem;
+  margin: auto;
+  background-color: rgb(235, 235, 235);
+  padding: 2rem 1rem;
+  border-radius: 1rem;
+}
+
+h1 {
+  width: 100%;
+  text-align: center;
+  font-weight: 500;
+}
+
+img {
+  height: 10rem;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+button {
+  margin-top: 20px;
+}
