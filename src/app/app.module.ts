@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { ToastrModule } from 'ngx-toastr';
+
 // Para trabalhar com formulários no Angular 12
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
@@ -66,7 +68,12 @@ import { LoginComponent } from './components/login/login.component';
     MatTableModule,
     MatIconModule,
     MatListModule,
-    MatCardModule
+    MatCardModule,
+    ToastrModule.forRoot({
+      timeOut: 4000,
+      closeButton: true,
+      progressBar: true
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
