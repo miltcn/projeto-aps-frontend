@@ -1,3 +1,4 @@
+import { AuthenticationGuard } from './authentication/authentication.guard';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
@@ -12,7 +13,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    component: NavigationComponent, children: [
+    component: NavigationComponent, canActivate:[AuthenticationGuard], children: [
       {
         path: 'home',
         component: HomeComponent
