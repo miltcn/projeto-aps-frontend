@@ -31,4 +31,8 @@ export class AuthenticationService {
     }
     return false;
   }
+
+  logout() {
+    localStorage.clear();
+  }
 }
