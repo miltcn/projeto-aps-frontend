@@ -1,6 +1,6 @@
 export interface Technician {
   id?: number | string ;
-  fullName: string;
+  name: string;
   cpf: string;
   email: string;
   password: string;
