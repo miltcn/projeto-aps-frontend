@@ -7,10 +7,9 @@ import { MatTableDataSource } from '@angular/material/table';
 @Component({
   selector: 'app-technician-list',
   templateUrl: './technician-list.component.html',
-  styleUrls: ['./technician-list.component.css']
+  styleUrls: ['./technician-list.component.css'],
 })
 export class TechnicianListComponent implements OnInit {
-
   ELEMENT_DATA: Technician[] = [];
 
   displayedColumns: string[] = ['id', 'name', 'cpf', 'email', 'actions'];
@@ -18,23 +17,22 @@ export class TechnicianListComponent implements OnInit {
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
-  constructor(private technicianService: TechnicianService) { }
+  constructor(private technicianService: TechnicianService) {}
 
   ngOnInit(): void {
     this.findAll();
   }
 
-  findAll() {
-      this.technicianService.findAll().subscribe(response => {
+  findAll(): void {
+    this.technicianService.findAll().subscribe(response => {
       this.ELEMENT_DATA = response;
-        this.dataSource = new MatTableDataSource<Technician>(this.ELEMENT_DATA);
-        this.dataSource.paginator = this.paginator;
+      this.dataSource = new MatTableDataSource<Technician>(this.ELEMENT_DATA);
+      this.dataSource.paginator = this.paginator;
     });
   }
 
-  applyFilter(event: Event) {
+  applyFilter(event: Event): void {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
-
 }

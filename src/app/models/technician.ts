@@ -1,5 +1,5 @@
 export interface Technician {
-  id?: number | string ;
+  id?: number | string;
   name: string;
   cpf: string;
   email: string;

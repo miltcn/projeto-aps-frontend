@@ -1,5 +1,5 @@
 import { Router } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { Credentials } from 'src/app/models/credentials';
@@ -8,14 +8,13 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
-export class LoginComponent implements OnInit {
-
+export class LoginComponent {
   credentials: Credentials = {
     email: '',
-    password: ''
-  }
+    password: '',
+  };
 
   email = new FormControl(null, Validators.email);
   password = new FormControl(null, Validators.minLength(3));
@@ -23,20 +22,20 @@ export class LoginComponent implements OnInit {
   constructor(
     private toastr: ToastrService,
     private authenticationService: AuthenticationService,
-    private router: Router
-  ) { }
+    private router: Router,
+  ) {}
 
-  ngOnInit(): void {
-  }
-
-  login() {
+  login(): void {
     this.authenticationService.authenticate(this.credentials).subscribe(
-      response => { 
-        this.authenticationService.loginSuccessfully(response.headers.get('Authorization').substring(7));
+      response => {
+        this.authenticationService.loginSuccessfully(
+          response.headers.get('Authorization').substring(7),
+        );
         this.router.navigate(['']);
-      }, () => {
+      },
+      () => {
         this.toastr.error('Usuário e/ou senha inválidos!');
-      }
+      },
     );
   }
 
@@ -46,5 +45,4 @@ export class LoginComponent implements OnInit {
     }
     return false;
   }
-
 }

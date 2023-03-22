@@ -8,7 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 
 // Para trabalhar com formulários no Angular 12
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // Para realizar requisições HTTP
 import { HttpClientModule } from '@angular/common/http';
@@ -35,7 +35,7 @@ import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { TechnicianListComponent } from './components/technician/technician-list/technician-list.component';
 import { LoginComponent } from './components/login/login.component';
-import { AuthInterceptorProvider } from './interceptors/auth.interceptor';
+import { authInterceptorProvider } from './interceptors/auth.interceptor';
 import { TechnicianCreateComponent } from './components/technician/technician-create/technician-create.component';
 
 @NgModule({
@@ -46,13 +46,13 @@ import { TechnicianCreateComponent } from './components/technician/technician-cr
     HeaderComponent,
     TechnicianListComponent,
     LoginComponent,
-    TechnicianCreateComponent
+    TechnicianCreateComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-     // Forms
+    // Forms
     FormsModule,
     ReactiveFormsModule,
     // Requisições http
@@ -75,10 +75,10 @@ import { TechnicianCreateComponent } from './components/technician/technician-cr
     ToastrModule.forRoot({
       timeOut: 4000,
       closeButton: true,
-      progressBar: true
-    })
+      progressBar: true,
+    }),
   ],
-  providers: [AuthInterceptorProvider],
-  bootstrap: [AppComponent]
+  providers: [authInterceptorProvider],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -9,16 +9,20 @@ import { TechnicianListComponent } from './components/technician/technician-list
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
-  { path: '', component: NavigationComponent, canActivate: [AuthenticationGuard], children: [
+  {
+    path: '',
+    component: NavigationComponent,
+    canActivate: [AuthenticationGuard],
+    children: [
       { path: 'home', component: HomeComponent },
       { path: 'tecnicos', component: TechnicianListComponent },
-      { path: 'tecnicos/create', component: TechnicianCreateComponent }
-    ]
-  }
+      { path: 'tecnicos/create', component: TechnicianCreateComponent },
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
