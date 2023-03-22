@@ -17,6 +17,7 @@
         // "prettier"
       ],
       "rules": {
+        "@typescript-eslint/no-empty-function": "off",
         "@typescript-eslint/naming-convention": [
           "error",
           {
@@ -25,14 +26,12 @@
             "leadingUnderscore": "allow"
           }
         ],
-
         "@typescript-eslint/no-empty-interface": [
           "error",
           {
             "allowSingleExtends": false
           }
         ],
-
         "indent": ["error", 2],
         "brace-style": [
           "error",
@@ -44,11 +43,8 @@
         "block-spacing": "error",
         "no-extra-semi": "off",
         "@typescript-eslint/no-extra-semi": "error",
-        "@typescript-eslint/consistent-type-imports": "error",
         "@typescript-eslint/member-ordering": "error",
-
         "no-console": "off",
-
         "@angular-eslint/directive-selector": [
           "error",
           {
