@@ -6,29 +6,24 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
-  styleUrls: ['./navigation.component.css']
+  styleUrls: ['./navigation.component.css'],
 })
 export class NavigationComponent implements OnInit {
-
   constructor(
     private router: Router,
     private authenticationService: AuthenticationService,
-    private toastrService: ToastrService
-  ) { }
+    private toastrService: ToastrService,
+  ) {}
 
   ngOnInit(): void {
     this.router.navigate(['home']);
   }
 
-  logout() {
+  logout(): void {
     this.router.navigate(['login']);
     this.authenticationService.logout();
-    this.toastrService.info(
-      'Logout realizado com sucesso!',
-      'Logout',
-      {
-        timeOut: 3000
-      });
+    this.toastrService.info('Logout realizado com sucesso!', 'Logout', {
+      timeOut: 3000,
+    });
   }
-
 }

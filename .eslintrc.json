@@ -24,6 +24,11 @@
             "selector": ["variable", "function"],
             "format": ["camelCase"],
             "leadingUnderscore": "allow"
+          },
+          {
+            "selector": ["variable"],
+            "modifiers": ["const"],
+            "format": ["camelCase", "UPPER_CASE"]
           }
         ],
         "@typescript-eslint/no-empty-interface": [
@@ -43,7 +48,6 @@
         "block-spacing": "error",
         "no-extra-semi": "off",
         "@typescript-eslint/no-extra-semi": "error",
-        "@typescript-eslint/member-ordering": "error",
         "no-console": "off",
         "@angular-eslint/directive-selector": [
           "error",
