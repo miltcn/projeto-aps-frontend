@@ -120,6 +120,7 @@
   },
   "defaultProject": "sosti",
   "cli": {
+    "analytics": "f22ba124-aa63-45fe-985b-25712ead3fd5",
     "defaultCollection": "@angular-eslint/schematics"
   }
 }

@@ -1,3 +1,4 @@
+import { FormControl, Validators } from '@angular/forms';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +7,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./technician-create.component.css'],
 })
 export class TechnicianCreateComponent {
-  constructor() {}
+
+  name: FormControl = new FormControl(null, Validators.minLength(3));
+  cpf: FormControl = new FormControl(null, Validators.required);
+  email: FormControl = new FormControl(null, Validators.email);
+  password: FormControl = new FormControl(null, Validators.minLength(3));
+
+  constructor() { }
+  
+  validateFields(): boolean {
+    return this.name.valid &&
+            this.cpf.valid &&
+            this.email.valid &&
+            this.password.valid;
+  }
 }
