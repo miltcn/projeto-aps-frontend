@@ -5,5 +5,5 @@ export interface Technician {
   email: string;
   password: string;
   profiles: string[];
-  createAt: string | Date;
+  createdAt: string | Date;
 }
