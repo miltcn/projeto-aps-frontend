@@ -33,4 +33,10 @@ export class TechnicianService {
       technician,
     );
   }
+
+  delete(id: string): Observable<Technician> {
+    return this.httpClient.delete<Technician>(
+      `${API_CONFIG.baseUrl}/tecnicos/${id}`,
+    );
+  }
 }

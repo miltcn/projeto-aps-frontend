@@ -7,6 +7,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TechnicianListComponent } from './components/technician/technician-list/technician-list.component';
 import { TechnicianUpdateComponent } from './components/technician/technician-update/technician-update.component';
+import { TechnicianDeleteComponent } from './components/technician/technician-delete/technician-delete.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -19,6 +20,7 @@ const routes: Routes = [
       { path: 'tecnicos', component: TechnicianListComponent },
       { path: 'tecnicos/create', component: TechnicianCreateComponent },
       { path: 'tecnicos/update/:id', component: TechnicianUpdateComponent },
+      { path: 'tecnicos/delete/:id', component: TechnicianDeleteComponent },
     ],
   },
 ];
