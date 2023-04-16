@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ToastrModule } from 'ngx-toastr';
+import { NgxMaskModule } from 'ngx-mask';
 
 // Para trabalhar com formulários no Angular 12
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -33,13 +34,16 @@ import { MatCardModule } from '@angular/material/card';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
-import { TechnicianListComponent } from './components/technician/technician-list/technician-list.component';
 import { LoginComponent } from './components/login/login.component';
 import { authInterceptorProvider } from './interceptors/auth.interceptor';
+import { TechnicianListComponent } from './components/technician/technician-list/technician-list.component';
 import { TechnicianCreateComponent } from './components/technician/technician-create/technician-create.component';
-import { NgxMaskModule } from 'ngx-mask';
 import { TechnicianUpdateComponent } from './components/technician/technician-update/technician-update.component';
 import { TechnicianDeleteComponent } from './components/technician/technician-delete/technician-delete.component';
+import { ClientListComponent } from './components/client/client-list/client-list.component';
+import { ClientCreateComponent } from './components/client/client-create/client-create.component';
+import { ClientUpdateComponent } from './components/client/client-update/client-update.component';
+import { ClientDeleteComponent } from './components/client/client-delete/client-delete.component';
 
 @NgModule({
   declarations: [
@@ -47,11 +51,15 @@ import { TechnicianDeleteComponent } from './components/technician/technician-de
     NavigationComponent,
     HomeComponent,
     HeaderComponent,
-    TechnicianListComponent,
     LoginComponent,
+    TechnicianListComponent,
     TechnicianCreateComponent,
     TechnicianUpdateComponent,
     TechnicianDeleteComponent,
+    ClientListComponent,
+    ClientCreateComponent,
+    ClientUpdateComponent,
+    ClientDeleteComponent,
   ],
   imports: [
     BrowserModule,
