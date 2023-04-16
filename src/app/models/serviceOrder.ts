@@ -1,6 +1,3 @@
-import { Client } from './client';
-import { Technician } from './technician';
-
 export interface ServiceOrder {
   id?: string;
   openingDate?: string;
@@ -9,8 +6,8 @@ export interface ServiceOrder {
   status: string;
   title: string;
   comments: string;
-  technician: Technician;
-  client: Client;
-  nomeClient: string;
-  nomeTechnician: string;
+  technician: string;
+  client: string;
+  clientName: string;
+  technicianName: string;
 }
