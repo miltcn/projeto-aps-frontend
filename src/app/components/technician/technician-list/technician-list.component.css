@@ -29,3 +29,16 @@ button {
 table {
   width: 100%;
 }
+
+.edit-delete {
+  display: flex;
+  justify-content: space-around;
+}
+
+.edit {
+  color: #575552;
+}
+
+.delete {
+  color: #f44f4f;
+}
