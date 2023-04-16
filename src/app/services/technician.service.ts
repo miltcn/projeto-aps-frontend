@@ -10,11 +10,27 @@ import { Injectable } from '@angular/core';
 export class TechnicianService {
   constructor(private httpClient: HttpClient) {}
 
+  findById(id: string): Observable<Technician> {
+    return this.httpClient.get<Technician>(
+      `${API_CONFIG.baseUrl}/tecnicos/${id}`,
+    );
+  }
+
   findAll(): Observable<Technician[]> {
     return this.httpClient.get<Technician[]>(`${API_CONFIG.baseUrl}/tecnicos`);
   }
 
   create(technician: Technician): Observable<Technician> {
-    return this.httpClient.post<Technician>(`${API_CONFIG.baseUrl}/tecnicos`, technician);
+    return this.httpClient.post<Technician>(
+      `${API_CONFIG.baseUrl}/tecnicos`,
+      technician,
+    );
+  }
+
+  update(technician: Technician): Observable<Technician> {
+    return this.httpClient.put<Technician>(
+      `${API_CONFIG.baseUrl}/tecnicos/${technician.id}`,
+      technician,
+    );
   }
 }
