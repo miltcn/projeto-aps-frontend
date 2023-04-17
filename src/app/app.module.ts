@@ -45,6 +45,7 @@ import { ClientCreateComponent } from './components/client/client-create/client-
 import { ClientUpdateComponent } from './components/client/client-update/client-update.component';
 import { ClientDeleteComponent } from './components/client/client-delete/client-delete.component';
 import { ServiceOrderListComponent } from './components/serviceOrder/service-order-list/service-order-list.component';
+import { ServiceOrderCreateComponent } from './components/serviceOrder/service-order-create/service-order-create.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import { ServiceOrderListComponent } from './components/serviceOrder/service-ord
     ClientUpdateComponent,
     ClientDeleteComponent,
     ServiceOrderListComponent,
+    ServiceOrderCreateComponent,
   ],
   imports: [
     BrowserModule,
