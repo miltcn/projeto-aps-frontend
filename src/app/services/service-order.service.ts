@@ -15,4 +15,11 @@ export class ServiceOrderService {
       `${API_CONFIG.baseUrl}/chamados`,
     );
   }
+
+  create(serviceOrder: ServiceOrder): Observable<ServiceOrder> {
+    return this.httpClient.post<ServiceOrder>(
+      `${API_CONFIG.baseUrl}/chamados`,
+      serviceOrder,
+    );
+  }
 }

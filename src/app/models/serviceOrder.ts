@@ -6,8 +6,8 @@ export interface ServiceOrder {
   statusCode: number;
   title: string;
   comments: string;
-  technician: string;
-  client: string;
-  clientName: string;
-  technicianName: string;
+  technicianId: string;
+  clientId: string;
+  clientName?: string;
+  technicianName?: string;
 }
