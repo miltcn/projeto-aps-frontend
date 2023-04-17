@@ -7,7 +7,7 @@ import { FormControl, Validators } from '@angular/forms';
 import { Client } from 'src/app/models/client';
 import { Technician } from 'src/app/models/technician';
 import { ToastrService } from 'ngx-toastr';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-service-order-update',
@@ -40,9 +40,12 @@ export class ServiceOrderUpdateComponent implements OnInit {
     private technicianService: TechnicianService,
     private toastrService: ToastrService,
     private router: Router,
+    private activatedRoute: ActivatedRoute,
   ) {}
 
   ngOnInit(): void {
+    this.serviceOrder.id = this.activatedRoute.snapshot.paramMap.get('id');
+    this.getServiceOrder();
     this.findAllClients();
     this.findAllTechnicians();
   }
@@ -70,26 +73,50 @@ export class ServiceOrderUpdateComponent implements OnInit {
     );
   }
 
-  create(): void {
+  getServiceOrder() {
+    this.serviceOrderService.findById(this.serviceOrder.id).subscribe(
+      response => {
+        this.serviceOrder = response;
+      },
+      err => {
+        this.toastrService.error(err.error.error);
+      },
+    );
+  }
+
+  update(): void {
     console.log(this.serviceOrder);
-    this.serviceOrderService.create(this.serviceOrder).subscribe(
+    this.serviceOrderService.update(this.serviceOrder).subscribe(
       () => {
         this.toastrService.success(
-          'Chamado cadastrado com sucesso!',
-          'Novo Chamado',
+          'Chamado atualizado com sucesso!',
+          'Atualizar Chamado',
         );
         this.router.navigate(['chamados']);
       },
       err => {
-        console.log(err);
-        if (err.error.errors) {
-          err.error.errors.forEach(element => {
-            this.toastrService.error(element.message);
-          });
-        } else {
-          this.toastrService.error(err.error.message);
-        }
+        this.toastrService.error(err.error.error);
       },
     );
+  }
+
+  getStatus(status: number) {
+    if (status === 0) {
+      return 'ABERTO';
+    } else if (status === 1) {
+      return 'ANDAMENTO';
+    } else {
+      return 'ENCERRADO';
+    }
+  }
+
+  getPriority(priority: number) {
+    if (priority === 0) {
+      return 'BAIXA';
+    } else if (priority === 1) {
+      return 'MÉDIA';
+    } else {
+      return 'ALTA';
+    }
   }
 }

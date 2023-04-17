@@ -71,7 +71,6 @@ export class ServiceOrderCreateComponent implements OnInit {
   }
 
   create(): void {
-    console.log(this.serviceOrder);
     this.serviceOrderService.create(this.serviceOrder).subscribe(
       () => {
         this.toastrService.success(
