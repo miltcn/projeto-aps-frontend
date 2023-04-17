@@ -16,7 +16,7 @@ export class NavigationComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.router.navigate(['chamados/create']);
+    this.router.navigate(['home']);
   }
 
   logout(): void {
