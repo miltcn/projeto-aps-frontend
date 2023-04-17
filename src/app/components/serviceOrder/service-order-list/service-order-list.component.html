@@ -1,7 +1,12 @@
 <div class="container">
   <h1>Lista de Chamados</h1>
 
-  <button mat-stroked-button color="primary" class="mat-elevation-z4">
+  <button
+    routerLink="create"
+    mat-stroked-button
+    color="primary"
+    class="mat-elevation-z4"
+  >
     Novo Chamado
   </button>
 
@@ -81,7 +86,7 @@
               <mat-icon class="edit" edit>edit</mat-icon>
             </a>
             <a routerLink="">
-              <mat-icon class="delete" visibility> visibility </mat-icon>
+              <mat-icon class="visibility" visibility> visibility </mat-icon>
             </a>
           </div>
         </td>
